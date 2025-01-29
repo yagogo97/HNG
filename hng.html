@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="profile-card">
+        <img src="abdmujeeb.jpg" alt="Profile Picture" data-testid="profilePicture">
+        <h2 data-testid="fullName">Waheed Mujeeb O</h2>
+        <h4 data-testid="jobTitle">Frontend Developer</h4>
+        <p data-testid="shortBio">I'm a frontend developer with expertise in HTML, CSS, JavaScript and currently learning React. Passionate about creating
+        interactive and user-friendly web interfaces, i blend design aesthetics with functionality. My background in Mass
+        Communication and History Education enhances my storytelling approach to digital experiences, making websites both
+        engaging and intuitive.
+</p>
+        <div class="info">
+            <p data-testid="currentLocation">Lagos, Nigeria</p>
+            <p>Email: <a href="mailto:wajeeb007@gmail.com" data-testid="emailAddress">wajeeb007@gmail.com</a></p>
+        </div>
+        <div class="social-links" data-testid="socialLinks">
+            <a href="https://linkedin.com/in/waheed" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/yagogo97" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://twitter.com/oluwamujeeb" target="_blank">
+                <i class="fa-brands fa-twitter"></i> Twitter
+            </a>
+        </div>
+
+        <p>UTC Time: <span id="utcTime" data-testid="currentTimeUTC"></span></p>
+    </div>
+    <script>
+        function updateTime() {
+            const utcTime = new Date().toISOString().slice(0, 19).replace("T", " ");
+            document.getElementById("utcTime").textContent = utcTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>
